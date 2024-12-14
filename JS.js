@@ -94,4 +94,14 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
-  
+  document.addEventListener('DOMContentLoaded', () => {
+    const introAnimation = document.getElementById('intro-animation');
+    const mainContent = document.getElementById('main-content');
+
+    // 等待動畫完成後隱藏介紹，顯示主內容
+    setTimeout(() => {
+        introAnimation.style.display = 'none'; // 隱藏動畫容器
+        mainContent.style.display = 'block'; // 顯示主內容
+    }, 3500); // 動畫時長為 2 秒
+});
+// -------------------------------
