@@ -3,140 +3,138 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>好 ● 食</title>
+    <title>好味計畫</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="CS.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <header class="top-navbar">
+        <div class="top-navbar-container">
+          <!-- LOGO 和導航 -->
+          <div class="navbar-center">
+            <div class="navbar-logo">食在好味</div>
+            <div class="navbar-subtitles">
+              <span class="category-link" data-target="meat-section">肉食天堂</span>
+              <span class="category-link" data-target="vegetables-section">綠色饗宴</span>
+              <span class="category-link" data-target="fish-section">鮮味之旅</span>
+            </div>
+          </div>
+        </div>
+      </header>
     <div id="intro-animation">
-        <div class="line">歡迎來到 <span>好 ● 食</span></div>
+        <div class="line">歡迎來到 <span>食在好味</span></div>
         <div class="line">在這裡，我們為您帶來健康、美味的食譜！</div>
     </div>
     <!-- 網頁主要內容 -->
     <div id="main-content" style="display: none;">
-        <!-- Pink Bar -->
-        <div class="pink-bar">
-            <div class="left">享 ● 食</div>
-            <div class="right">
-                <button class="filter-button active" data-filter="all">全部</button>
-                <button class="filter-button" data-filter="meat">無肉不歡</button>
-                <button class="filter-button" data-filter="vegetables">健康蔬菜</button>
-                <button class="filter-button" data-filter="fish">有魚有魚</button>
-            </div>
-        </div>
-    <!----------->
         <!-- 商品資訊 -->
         <div class="product-container">
-            <!-- 圖片 1 -->
-            <div class="product-block meat">
-                <!-- 圖片區域 -->
-                <div class="product-image trigger-modal"
-                    data-title="蘋果燒排骨"
-                    data-description="傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。"
-                    data-image="img/蘋果燒排骨.png"
-                    data-ingredients="排骨500克、蘋果2顆、醬油50毫升、糖10克。"
-                    data-steps="將排骨清洗乾淨，切成小塊。加入鍋中與蘋果翻炒，最後燉煮20分鐘。">
-                <img src="img/蘋果燒排骨.png" alt="蘋果燒排骨">
-                <div class="hover-bar">了解更多</div>
+            <!-- 肉類區域 -->
+                <!--肉1 -->
+                <div id="meat-section" class="product-category-bar">肉食天堂</div>
+                <div class="product-block meat">
+                    <div class="product-image trigger-modal"
+                        data-title="蘋果燒排骨"
+                        data-description="傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。"
+                        data-image="img/蘋果燒排骨.png"
+                        data-ingredients="排骨500克、蘋果2顆、醬油50毫升、糖10克。"
+                        data-steps="將排骨清洗乾淨，切成小塊。加入鍋中與蘋果翻炒，最後燉煮20分鐘。">
+                        <img src="img/蘋果燒排骨.png" alt="蘋果燒排骨">
+                        <div class="hover-bar">了解更多</div>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">蘋果燒排骨</h4>
+                        <p class="product-description">傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。</p>
+                    </div>
                 </div>
-                <!-- 文字區域 -->
-                <div class="product-info">
-                <h4 class="product-title">蘋果燒排骨</h4> <!-- 將填充 data-title -->
-                <p class="product-description">傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。</p> <!-- 將填充 data-description -->
+                <!-- 肉1 -->
+                 <!--肉2 -->
+                <div class="product-block meat">
+                    <div class="product-image trigger-modal"
+                        data-title="蘋果燒排骨"
+                        data-description="傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。"
+                        data-image="img/蘋果燒排骨.png"
+                        data-ingredients="排骨500克、蘋果2顆、醬油50毫升、糖10克。"
+                        data-steps="將排骨清洗乾淨，切成小塊。加入鍋中與蘋果翻炒，最後燉煮20分鐘。">
+                        <img src="img/蘋果燒排骨.png" alt="蘋果燒排骨">
+                        <div class="hover-bar">了解更多</div>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">蘋果燒排骨</h4>
+                        <p class="product-description">傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。</p>
+                    </div>
                 </div>
-            </div>
-            <!-- 圖片 2 -->
+                <!-- 肉2 -->
+                <!--肉3 -->
+                <div class="product-block meat">
+                    <div class="product-image trigger-modal"
+                        data-title="蘋果燒排骨"
+                        data-description="傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。"
+                        data-image="img/蘋果燒排骨.png"
+                        data-ingredients="排骨500克、蘋果2顆、醬油50毫升、糖10克。"
+                        data-steps="將排骨清洗乾淨，切成小塊。加入鍋中與蘋果翻炒，最後燉煮20分鐘。">
+                        <img src="img/蘋果燒排骨.png" alt="蘋果燒排骨">
+                        <div class="hover-bar">了解更多</div>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">蘋果燒排骨</h4>
+                        <p class="product-description">傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。</p>
+                    </div>
+                </div>
+                <!-- 肉3 -->
+                <!-- 肉4 -->
+                <div class="product-block meat">
+                    <div class="product-image trigger-modal"
+                        data-title="蘋果燒排骨"
+                        data-description="傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。"
+                        data-image="img/蘋果燒排骨.png"
+                        data-ingredients="排骨500克、蘋果2顆、醬油50毫升、糖10克。"
+                        data-steps="將排骨清洗乾淨，切成小塊。加入鍋中與蘋果翻炒，最後燉煮20分鐘。">
+                        <img src="img/蘋果燒排骨.png" alt="蘋果燒排骨">
+                        <div class="hover-bar">了解更多</div>
+                    </div>
+                    <div class="product-info">
+                        <h4 class="product-title">蘋果燒排骨</h4>
+                        <p class="product-description">傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。</p>
+                    </div>
+                </div>
+                <!-- 肉4 -->
+            <!-- 蔬食區域 -->
+            <div id="vegetables-section" class="product-category-bar">綠色饗宴</div>
             <div class="product-block vegetables">
-                <!-- 圖片區域 -->
                 <div class="product-image trigger-modal"
-                    data-title="蜜汁雞翅"
-                    data-description="傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。"
-                    data-image="img/蜜汁雞翅.png"
-                    data-ingredients="排骨500克、蘋果2顆、醬油50毫升、糖10克。"
-                    data-steps=" 將排骨清洗乾淨，切成小塊。 加入鍋中與蘋果翻炒，最後燉煮20分鐘。">
-                <img src="img/蜜汁雞翅.png" alt="蘋果燒排骨">
-                <div class="hover-bar">了解更多</div>
+                     data-title="田園沙拉"
+                     data-description="健康又美味的田園沙拉。"
+                     data-image="img/田園沙拉.png"
+                     data-ingredients="生菜100克、番茄50克、沙拉醬30毫升。"
+                     data-steps="將所有食材混合均勻，加入沙拉醬拌勻即可。">
+                    <img src="img/蘋果燒排骨.png" alt="田園沙拉">
+                    <div class="hover-bar">了解更多</div>
                 </div>
-                <!-- 文字區域 -->
                 <div class="product-info">
-                <h4 class="product-title">蜜汁雞翅</h4> <!-- 將填充 data-title -->
-                <p class="product-description">傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。</p> <!-- 將填充 data-description -->
+                    <h4 class="product-title">田園沙拉</h4>
+                    <p class="product-description">健康又美味的田園沙拉。</p>
                 </div>
             </div>
-            <!-- 圖片3 -->
+
+            <!-- 魚類區域 -->
+            <div id="fish-section" class="product-category-bar">鮮味之旅</div>
             <div class="product-block fish">
-                <!-- 圖片區域 -->
                 <div class="product-image trigger-modal"
-                    data-title="香煎鱈魚"
-                    data-description="傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。"
-                    data-image="img/香煎鱈魚.png"
-                    data-ingredients="排骨500克、蘋果2顆、醬油50毫升、糖10克。"
-                    data-steps="將排骨清洗乾淨，切成小塊。加入鍋中與蘋果翻炒，最後燉煮20分鐘。">
-                <img src="img/香煎鱈魚.png" alt="蘋果燒排骨">
-                <div class="hover-bar">了解更多</div>
+                     data-title="香煎鱈魚"
+                     data-description="外酥內嫩，搭配檸檬更添風味。"
+                     data-image="img/香煎鱈魚.png"
+                     data-ingredients="鱈魚200克、檸檬1片、鹽5克。"
+                     data-steps="將鱈魚撒鹽醃製，煎至表面金黃即可。">
+                    <img src="img/香煎鱈魚.png" alt="香煎鱈魚">
+                    <div class="hover-bar">了解更多</div>
                 </div>
-                <!-- 文字區域 -->
                 <div class="product-info">
-                <h4 class="product-title">香煎鱈魚</h4> <!-- 將填充 data-title -->
-                <p class="product-description">傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。</p> <!-- 將填充 data-description -->
+                    <h4 class="product-title">香煎鱈魚</h4>
+                    <p class="product-description">外酥內嫩，搭配檸檬更添風味。</p>
                 </div>
             </div>
-            <!-- 圖片4 -->
-            <div class="product-block">
-                <!-- 圖片區域 -->
-                <div class="product-image trigger-modal"
-                    data-title="蘋果燒排骨"
-                    data-description="傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。"
-                    data-image="img/蘋果燒排骨.png"
-                    data-ingredients="排骨500克、蘋果2顆、醬油50毫升、糖10克。"
-                    data-steps="將排骨清洗乾淨，切成小塊。加入鍋中與蘋果翻炒，最後燉煮20分鐘。">
-                <img src="img/蘋果燒排骨.png" alt="蘋果燒排骨">
-                <div class="hover-bar">了解更多</div>
-                </div>
-                <!-- 文字區域 -->
-                <div class="product-info">
-                <h4 class="product-title">蘋果燒排骨</h4> <!-- 將填充 data-title -->
-                <p class="product-description">傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。</p> <!-- 將填充 data-description -->
-                </div>
-            </div>
-            <!-- 圖片5 -->
-            <div class="product-block">
-                <!-- 圖片區域 -->
-                <div class="product-image trigger-modal"
-                    data-title="蘋果燒排骨"
-                    data-description="傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。"
-                    data-image="img/蘋果燒排骨.png"
-                    data-ingredients="排骨500克、蘋果2顆、醬油50毫升、糖10克。"
-                    data-steps="將排骨清洗乾淨，切成小塊。加入鍋中與蘋果翻炒，最後燉煮20分鐘。">
-                <img src="img/蘋果燒排骨.png" alt="蘋果燒排骨">
-                <div class="hover-bar">了解更多</div>
-                </div>
-                <!-- 文字區域 -->
-                <div class="product-info">
-                <h4 class="product-title">蘋果燒排骨</h4> <!-- 將填充 data-title -->
-                <p class="product-description">傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。</p> <!-- 將填充 data-description -->
-                </div>
-            </div>
-            <!-- 圖片6 -->
-            <div class="product-block fish">
-                <!-- 圖片區域 -->
-                <div class="product-image trigger-modal"
-                    data-title="香煎鱈魚"
-                    data-description="傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。"
-                    data-image="img/香煎鱈魚.png"
-                    data-ingredients="排骨500克、蘋果2顆、醬油50毫升、糖10克。"
-                    data-steps="將排骨清洗乾淨，切成小塊。加入鍋中與蘋果翻炒，最後燉煮20分鐘。">
-                <img src="img/香煎鱈魚.png" alt="蘋果燒排骨">
-                <div class="hover-bar">了解更多</div>
-                </div>
-                <!-- 文字區域 -->
-                <div class="product-info">
-                <h4 class="product-title">香煎鱈魚</h4> <!-- 將填充 data-title -->
-                <p class="product-description">傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。</p> <!-- 將填充 data-description -->
-                </div>
-            </div>
-            <!-- ----- -->
         </div>
     </div>
     <!-- 插入模態框代碼的區域 -->

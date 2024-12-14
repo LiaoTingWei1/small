@@ -11,48 +11,87 @@ body {
     align-items: center;
     min-height: 100vh;
   }
-  /* Pink Bar 按鈕樣式 ---------------------------------*/
-  .pink-bar {
+/* Header Container-------------------------------- */
+.top-navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px; /* 確保高度足夠 */
-    background-color: pink;
-    color: white;
-    justify-content: space-between; /* 左右分布 */
-    align-items: center; /* 垂直方向居中 */
-    padding: 0 20px; /* 左右內邊距 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex !important; /* 確保可見 */
-    opacity: 1 !important;   /* 確保透明度正常 */
-    z-index: 1000 !important; /* 確保在最上層 */
-}
-.pink-bar .left {
-    font-size: 24px; /* 調整標題大小 */
-    font-weight: bold;
-    color: white;
-}
-.pink-bar .right {
+    height: 130px;
+    background: linear-gradient(to right, #f7f2e6, #d1b5a7); /* 柔和漸層背景 */
     display: flex;
-    gap: 10px; /* 按鈕間距 */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加輕微陰影 */
 }
 
+.top-navbar-container {
+    width: 90%; /* 控制內部元素寬度 */
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-.pink-bar .right button {
-    background-color: white;
-    color: pink;
-    border: none;
-    padding: 8px 16px; /* 按鈕內邊距 */
+/* LOGO */
+.navbar-logo {
+    font-family: "Playfair Display", serif; /* 優雅字體 */
+    font-size: 40px; /* 加大 LOGO 字體 */
+    font-weight: 700;
+    color: #2c2c2c; /* 深灰色文字 */
+    text-transform: uppercase; /* 大寫字母 */
+    letter-spacing: 2px; /* 增加字距 */
+}
+
+/* 子標題 */
+.navbar-subtitles {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* 子標題之間的間距 */
+    font-size: 18px;
+    font-weight: 600;
+    color: #666;
+    margin-top: 8px; 
+}
+
+.navbar-center {
+    text-align: center;
+}
+
+.navbar-subtitles span {
+    font-family: "Noto Sans TC", sans-serif;
     font-size: 14px;
-    font-weight: bold;
-    border-radius: 4px; /* 圓角 */
+    font-weight: 500;
+    color: #7a7a7a;
+    margin: 0 12px;
+    padding: 5px 8px;
+    border-radius: 6px;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
-.pink-bar .right button.active {
-    background-color: pink;
-    color: white;
+
+.navbar-subtitles span:hover {
+    transform: scale(1.2); /* 滑鼠移動時放大 */
+    background-color: #2c2c2c;
+    color: #fff;
+}
+/* 類型 Bar 樣式 */
+.product-category-bar {
+    font-family: "Playfair Display", serif; /* 優雅字體 */
+    font-size: 26px; /* 更大的字體 */
+    font-weight: bold;
+    color: #ffffff; /* 白色文字 */
+    text-align: center;
+    padding: 20px; /* 更大的內邊距 */
+    margin: 30px auto; /* 與其他內容的距離 */
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4); /* 漸層背景 */
+    border: none; /* 移除邊框 */
+    border-radius: 16px; /* 圓角設計 */
+    width: 80%; /* 限制寬度 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* 添加柔和陰影 */
+    letter-spacing: 2px; /* 增加字距 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 添加動態效果 */
 }
 /* ----------------------------------------- */
 .banner {

@@ -105,3 +105,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3500); // 動畫時長為 2 秒
 });
 // -------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.category-link');
+
+  links.forEach(link => {
+      link.addEventListener('click', (event) => {
+          const targetId = event.target.getAttribute('data-target');
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+              const offset = 150; // 調整滾動偏移量
+              const targetPosition = targetElement.offsetTop;
+              window.scrollTo({
+                  top: targetPosition - offset,
+                  behavior: 'smooth'
+              });
+          }
+      });
+  });
+});
