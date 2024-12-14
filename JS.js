@@ -42,19 +42,32 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // 顯示備料食材內容
     function showIngredients() {
-      const ingredients = document.getElementById('modalContent').getAttribute('data-ingredients');
+      const ingredients = document
+        .getElementById('modalContent')
+        .getAttribute('data-ingredients')
+        .split('、'); // 按 "、" 分割為列表
+      const ingredientList = ingredients
+        .map((item, index) => `<li data-index="${index + 1}">${item.trim()}</li>`) // 為每項內容添加序號
+        .join('');
       document.getElementById('modalContent').innerHTML = `
         <h4>備料食材</h4>
-        <p>${ingredients}</p>
+        <ul>${ingredientList}</ul>
       `;
     }
   
     // 顯示料理做法內容
     function showSteps() {
-      const steps = document.getElementById('modalContent').getAttribute('data-steps');
+      const steps = document
+        .getElementById('modalContent')
+        .getAttribute('data-steps')
+        .split('。') // 按 "。" 分割為列表
+        .filter(step => step.trim() !== ''); // 過濾掉空白項
+      const stepsList = steps
+        .map((step, index) => `<li data-index="${index + 1}">${step.trim()}</li>`) // 為每步添加序號
+        .join('');
       document.getElementById('modalContent').innerHTML = `
         <h4>料理做法</h4>
-        <p>${steps}</p>
+        <ul>${stepsList}</ul>
       `;
     }
   
