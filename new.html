@@ -12,33 +12,89 @@
 <div class="pink-bar"></div>
     <!-- 商品資訊 -->
     <div class="product-container">
-        <div class="product-image trigger-modal" 
-             data-title="蘋果燒排骨" 
-             data-description="傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。" 
-             data-image="img/蘋果燒排骨.png">
-          <img src="img/蘋果燒排骨.png" alt="蘋果燒排骨">
-          <div class="hover-bar">了解更多</div>
+        <!-- 圖片 1 -->
+        <div class="product-block">
+            <!-- 圖片區域 -->
+            <div class="product-image trigger-modal"
+                 data-title="蘋果燒排骨"
+                 data-description="傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。"
+                 data-image="img/蘋果燒排骨.png"
+                 data-ingredients="排骨500克、蘋果2顆、醬油50毫升、糖10克。"
+                 data-steps="1. 將排骨清洗乾淨，切成小塊。2. 加入鍋中與蘋果翻炒，最後燉煮20分鐘。">
+              <img src="img/蘋果燒排骨.png" alt="蘋果燒排骨">
+              <div class="hover-bar">了解更多</div>
+            </div>
+            <!-- 文字區域 -->
+            <div class="product-info">
+              <h4 class="product-title">蘋果燒排骨</h4> <!-- 將填充 data-title -->
+              <p class="product-description">傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。</p> <!-- 將填充 data-description -->
+            </div>
+          </div>
         </div>
-      
-        <!-- 圖片下方的文字容器 -->
-        <div class="product-info">
-          <h4 class="product-title">蘋果燒排骨</h4>
-          <p class="product-description">傳統紅燒排骨的基礎上，因蘋果的加入，注入一股清新果香。</p>
+        <!-- 圖片 2 -->
+        <div class="product-block">
+            <div class="product-image trigger-modal"
+                 data-title="蜜汁雞翅"
+                 data-description="濃郁蜜汁醬料，搭配鮮嫩多汁的雞翅，是家庭聚會的最佳選擇。"
+                 data-image="img/蜜汁雞翅.png"
+                 data-ingredients="雞翅10隻、蜂蜜30克、醬油20毫升、蒜末10克。"
+                 data-steps="1. 將雞翅清洗，醃製20分鐘。2. 將醃製好的雞翅放入鍋中，煎至兩面金黃後加入調料燉煮。">
+              <img src="img/蜜汁雞翅.png" alt="蜜汁雞翅">
+              <div class="hover-bar">了解更多</div>
+            </div>
+            <div class="product-info">
+              <h4 class="product-title">蜜汁雞翅</h4>
+              <p class="product-description">濃郁蜜汁醬料，搭配鮮嫩多汁的雞翅，是家庭聚會的最佳選擇。</p>
+            </div>
+          </div>
         </div>
+        <!-- 更多圖片 -->
+        <div class="product-block">
+            <div class="product-image trigger-modal"
+                 data-title="香煎鱈魚"
+                 data-description="濃郁蜜汁醬料，搭配鮮嫩多汁的雞翅，是家庭聚會的最佳選擇。"
+                 data-image="img/香煎鱈魚.png"
+                 data-ingredients="雞翅10隻、蜂蜜30克、醬油20毫升、蒜末10克。"
+                 data-steps="1. 將雞翅清洗，醃製20分鐘。2. 將醃製好的雞翅放入鍋中，煎至兩面金黃後加入調料燉煮。">
+              <img src="img/香煎鱈魚.png" alt="蜜汁雞翅">
+              <div class="hover-bar">了解更多</div>
+            </div>
+            <div class="product-info">
+              <h4 class="product-title">香煎鱈魚</h4>
+              <p class="product-description">濃郁蜜汁醬料，搭配鮮嫩多汁的雞翅，是家庭聚會的最佳選擇。</p>
+            </div>
+          </div>
+        </div>
+         <!-- 新增商品 -->
+  <div class="product-block">
+    <div class="product-image trigger-modal"
+                 data-title="香煎鱈魚"
+                 data-description="濃郁蜜汁醬料，搭配鮮嫩多汁的雞翅，是家庭聚會的最佳選擇。"
+                 data-image="img/香煎鱈魚.png"
+                 data-ingredients="雞翅10隻、蜂蜜30克、醬油20毫升、蒜末10克。"
+                 data-steps="1. 將雞翅清洗，醃製20分鐘。2. 將醃製好的雞翅放入鍋中，煎至兩面金黃後加入調料燉煮。">
+              <img src="img/香煎鱈魚.png" alt="蜜汁雞翅">
+              <div class="hover-bar">了解更多</div>
+            </div>
+    <div class="product-info">
+      <h4 class="product-title">新商品</h4>
+      <p class="product-description">這是一個新添加的商品。</p>
     </div>
+  </div>
+</div>
 <!-- 插入模態框代碼的區域 -->
 <div class="modal fade" id="recipeModal" tabindex="-1" aria-labelledby="recipeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 800px;">
       <div class="modal-content" style="height: 800px;">
         <div class="modal-body d-flex" style="display: flex; flex-direction: row; padding: 0;">
-          <!-- 左侧图片 -->
+          <!-- 左側圖片 -->
           <div class="modal-image" style="flex: 1; background-color: #f8f9fa;">
             <img id="modalImage" src="" alt="" style="width: 100%; height: auto; object-fit: cover;">
           </div>
-          <!-- 右侧内容 -->
+          <!-- 右側內容 -->
           <div class="modal-info" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding: 20px;">
             <div id="modalContent" style="flex: 1; overflow-y: auto;">
-              <!-- 默认内容 -->
+              <!-- 動態內容 -->
             </div>
             <div class="modal-buttons d-flex justify-content-center" style="gap: 20px;">
               <button class="btn btn-secondary" id="ingredientsButton">備料食材</button>

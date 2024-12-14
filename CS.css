@@ -43,27 +43,32 @@ body {
 
 /* 商品容器樣式 ----------*/
 .product-container {
-    width: 330px; /* 根據圖片寬度設置 */
-    margin: 0 auto; /* 居中 */
-    text-align: center; /* 文字置中 */
+    display: flex;
+    flex-wrap: wrap; /* 支援多行圖片排列 */
+    gap: 20px; /* 圖片之間的間距 */
+    justify-content: center; /* 圖片置中 */
   }
 
 /* 商品圖片容器 */
-.product-image {
+    .product-image {
     position: relative;
-    width: 100%; /* 佔滿父容器寬度 */
+    width: 300px; /* 佔滿父容器寬度 */
     overflow: hidden;
   }
-.product-image img {
-    width: 100%; /* 圖片自適應寬度 */
-    height: auto; /* 保持比例 */
+    .product-image img {
+    height:200px;
+    width: 220px; /* 限制圖片寬度 */
+    margin: 0 auto; /* 圖片居中 */
+    position: relative;
     display: block;
   }
   .product-info {
-    margin-top: 10px; /* 與圖片之間的距離 */
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px 15px; /* 內邊距 */
   }
 /* 商品資訊樣式 */
-.product-details {
+    .product-details {
     text-align: center;
     margin-top: 25px;
   }
@@ -71,6 +76,7 @@ body {
     font-family: "Source Han Sans", "Noto Sans TC", "Helvetica Neue", sans-serif;
     font-size: 16px;
     color: #555;
+    margin: 5px 0;
     line-height: 1.6;
   }
   .product-title {
@@ -88,6 +94,14 @@ body {
     color: #222;
     letter-spacing: 1px; /* 更高的字母間距 */
   }
+  .product-block {
+    width: 300px; /* 區塊固定寬度 */
+    text-align: center; /* 文字置中 */
+    overflow: hidden; /* 防止內容溢出 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 增加區塊交互效果 */
+    margin: 30px;
+  }
+
 /* -------------------------------------------------- */
 
 /* 圖片懸停條樣式 -------------------------------------*/
