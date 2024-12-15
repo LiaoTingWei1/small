@@ -318,32 +318,32 @@ body {
 }
 /* -------------------------------------------------- */
 
-/* 動畫容器樣式 ---------------------------------------*/
+/* 開頭動畫容器 */
 #intro-animation {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 10000;
-    font-family: 'Noto Sans TC', sans-serif;
-    color: #333;
+    background-color: rgba(255, 255, 255, 0.9); /* 背景初始色 */
     overflow: hidden;
-    text-align: center;
 }
 
 /* 每一行文字樣式 */
 .line {
+    font-family: "Playfair Display", serif;
     font-size: 36px;
     font-weight: bold;
-    opacity: 0;
-    transform: translateX(-100%); /* 從左側滑入 */
-    animation: slideIn 1s ease forwards;
+    text-align: center;
+    color: #34495e; /* 深灰藍 */
+    opacity: 0; /* 初始隱藏 */
+    transform: translateY(20px);
+    animation: fadeInText 1.5s ease forwards;
 }
 
 /* 強調文字樣式 */
@@ -352,8 +352,11 @@ body {
 }
 
 /* 第二行的動畫延遲 */
-.line:nth-child(2) {
-    animation-delay: 1s; /* 延遲 1 秒 */
+.line.first-line {
+    animation-delay: 0.5s; /* 第一行提早出現 */
+}
+.line:not(.first-line) {
+    animation-delay: 1.5s; /* 第二行延遲出現 */
 }
 
 /* 滑入動畫效果 */
@@ -551,4 +554,51 @@ img {
 
 #skip-button:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+/* 開頭動畫區容器 */
+#intro-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    background-color: rgba(255, 255, 255, 0.9); /* 白色背景稍微透明 */
+    overflow: hidden;
+}
+/* 背景層 */
+.background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #6a85b6, #bac8e0); /* 柔和藍綠漸層 */
+    opacity: 0; /* 初始隱藏 */
+    z-index: -1; /* 放在文字後面 */
+    animation: fadeInBackground 2s ease forwards; /* 動態背景顯示 */
+}
+/* 動畫效果 */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInBackground {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
