@@ -4,27 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>好味計畫</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="CS.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">  
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    </head>
   <body>
-    <header class="top-navbar">
+    <div class="top-navbar">
         <div class="top-navbar-container">
-          <!-- LOGO 和導航 -->
-          <div class="navbar-center">
-            <div class="navbar-logo">食在好味</div>
-            <div class="navbar-subtitles">
-              <span class="category-link" data-target="meat-section">肉食天堂</span>
-              <span class="category-link" data-target="vegetables-section">綠色饗宴</span>
-              <span class="category-link" data-target="fish-section">鮮味之旅</span>
+            <div class="navbar-center">
+                <!-- LOGO -->
+                <div class="navbar-logo">
+                    <!-- LOGO圖標 -->
+                    <span class="logo-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#e67e22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M8 8h3v8H8zM15 8l-2 8"></path>
+                        </svg>
+                    </span>
+                    <!-- LOGO文字 -->
+                    <span class="logo-text">食在好味</span>
+                </div>
+                <!-- 漢堡選單 -->
+                <div class="hamburger-menu">☰</div>
+                <!-- 下拉的導航子標題 -->
+                <div class="navbar-subtitles">
+                    <span class="category-link" data-target="meat-section">肉食天堂</span>
+                    <span class="category-link" data-target="vegetables-section">綠色饗宴</span>
+                    <span class="category-link" data-target="fish-section">鮮味之旅</span>
+                </div>
             </div>
-          </div>
         </div>
-      </header>
+    </div>
+    
     <div id="intro-animation">
         <div class="line">歡迎來到 <span>食在好味</span></div>
         <div class="line">在這裡，我們為您帶來健康、美味的食譜！</div>
+        <button id="skip-button" class="btn btn-dark">SKIP</button>
     </div>
     <!-- 網頁主要內容 -->
     <div id="main-content" style="display: none;">
@@ -32,7 +50,7 @@
         <div class="product-container">
             <!-- 肉類區域 -->
                 <!--肉1 -->
-                <div id="meat-section" class="product-category-bar">肉食天堂</div>
+                <section id="meat-section" class="product-category-bar">肉食天堂</section>
                 <div class="product-block meat">
                     <div class="product-image trigger-modal"
                         data-title="蘋果燒排骨"
@@ -208,7 +226,7 @@
                         <p class="product-description">滷製入味的牛腱，肉質緊實且帶有醬香，冷熱皆宜，適合切片當作主菜或小吃。</p>
                     </div>
                 </div>
-                <div id="vegetables-section" class="product-category-bar">綠色饗宴</div>
+                <section id="vegetables-section" class="product-category-bar">綠色饗宴</section>
                 <!-- 菜1 -->    
                 <div class="product-block vegetables">
                     <div class="product-image trigger-modal"
@@ -243,9 +261,7 @@
                     </div>
                     <div class="product-info">
                         <h4 class="product-title">紅燒豆腐配小白菜</h4>
-                        <p class="product-description">嫩滑的豆腐配上鮮綠的小白菜，搭配濃郁醬汁，色香味俱全。
-
-                            做法：</p>
+                        <p class="product-description">嫩滑的豆腐配上鮮綠的小白菜，搭配濃郁醬汁，色香味俱全。</p>
                     </div>
                 </div>
                 <!-- 菜3 -->    
@@ -285,7 +301,7 @@
                     </div>
                 </div>
             <!-- 海鮮類區域 -->
-            <div id="fish-section" class="product-category-bar">鮮味之旅</div>
+            <section id="fish-section" class="product-category-bar">鮮味之旅</section>
                 <!-- 海鮮1 -->
                 <div class="product-block fish">
                     <div class="product-image trigger-modal"

@@ -34,14 +34,31 @@ body {
     align-items: center;
 }
 
-/* LOGO */
 .navbar-logo {
-    font-family: "Playfair Display", serif; /* 優雅字體 */
-    font-size: 40px; /* 加大 LOGO 字體 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* 圖標和文字間距 */
+    font-family: "Playfair Display", serif;
+    font-size: 36px; /* 文字大小 */
     font-weight: 700;
-    color: #2c2c2c; /* 深灰色文字 */
-    text-transform: uppercase; /* 大寫字母 */
-    letter-spacing: 2px; /* 增加字距 */
+    color: #e67e22;
+    cursor: pointer;
+}
+
+/* LOGO圖案樣式 */
+.logo-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: #e67e22; /* 圖標描邊顏色 */
+    transition: transform 0.3s ease-in-out;
+}
+.logo-text {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #e67e22;
+    transition: color 0.3s ease;
 }
 
 /* 子標題 */
@@ -367,3 +384,171 @@ body {
     }
 }
 /* ----------------------------------------------- */
+.favorite-btn {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #666;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.favorite-btn.active {
+    color: #fff;
+    background-color: #ff6f61;
+    border-color: #ff6f61;
+}
+/* --------------------- */
+.navbar-right {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+/* --------------------------- */
+/* 漢堡選單基礎樣式 */
+.hamburger-menu {
+    display: none; /* 默認隱藏（桌面端不顯示） */
+    font-size: 24px; /* 漢堡圖標大小 */
+    color: #333;
+    cursor: pointer;
+    margin-left: 20px; /* 與 LOGO 的間距 */
+}
+/* 手機屏幕 (小於 768px) */
+@media (max-width: 768px) {
+    .product-category-bar {
+        font-size: 18px; /* 字體縮小 */
+        padding: 10px 0; /* 縮小上下間距 */
+        margin: 10px auto; /* 調整 margin */
+    }
+    .product-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+    .product-block {
+        flex: 1 1 calc(50% - 20px); /* 每行顯示兩個商品 */
+        max-width: calc(50% - 20px);
+    }
+    .navbar-subtitles span {
+        font-size: 12px; /* 縮小字體 */
+    }
+    #view-favorites {
+        font-size: 14px; /* 按鈕更大，方便點擊 */
+        padding: 8px 16px;
+    }
+    .top-navbar {
+        height: 100px; /* 高度縮小 */
+    }
+    .navbar-logo {
+        font-size: 28px; /* LOGO 字體縮小 */
+    }
+    .navbar-subtitles span {
+        font-size: 12px; /* 導航字體縮小 */
+        padding: 3px 6px;
+    }
+}
+
+/* 平板屏幕 (768px ~ 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .product-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+    .product-block {
+        flex: 1 1 calc(33.33% - 20px); /* 每行顯示三個商品 */
+        max-width: calc(33.33% - 20px);
+    }
+}
+
+/* 桌面屏幕 (大於 1024px) */
+@media (min-width: 1024px) {
+    .product-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+    .product-block {
+        flex: 1 1 calc(25% - 20px); /* 每行顯示四個商品 */
+        max-width: calc(25% - 20px);
+    }
+}
+/* 手機屏幕 (小於 768px): 漢堡菜單 */
+@media (max-width: 768px) {
+    .top-navbar {
+        flex-direction: column;
+        height: auto;
+    }
+    .navbar-subtitles {
+        display: none; /* 默認隱藏 */
+    }
+    .hamburger-menu {
+        display: block; /* 顯示漢堡菜單 */
+        cursor: pointer;
+        font-size: 20px;
+        padding: 10px;
+    }
+    .hamburger-menu.open + .navbar-subtitles {
+        display: flex; /* 展開菜單 */
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/* 手機屏幕 (小於 768px): 模態框全屏 */
+@media (max-width: 768px) {
+    .modal-dialog {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .modal-content {
+        height: auto; /* 自適應高度 */
+    }
+    .modal-image img {
+        width: 100%; /* 圖片自適應寬度 */
+        height: auto;
+    }
+    .modal-info {
+        padding: 10px;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto; /* 確保圖片比例不變 */
+}
+/* 高亮樣式 */
+.category-link {
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .category-link.active {
+    color: #d35400; /* 高亮顏色 */
+    font-weight: bold;
+    transform: scale(1.2); /* 放大效果 */
+  }
+  /* 開頭動畫區新增的 SKIP 按鈕樣式 */
+#skip-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#skip-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

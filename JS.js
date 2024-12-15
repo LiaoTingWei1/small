@@ -95,14 +95,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   document.addEventListener('DOMContentLoaded', () => {
-    const introAnimation = document.getElementById('intro-animation');
+    const skipButton = document.getElementById('skip-button');
+    const pageOverlay = document.getElementById('intro-animation');
     const mainContent = document.getElementById('main-content');
+    const fadeElements = document.querySelectorAll('.fade-in');
 
-    // 等待動畫完成後隱藏介紹，顯示主內容
+    // 自動執行動畫
     setTimeout(() => {
-        introAnimation.style.display = 'none'; // 隱藏動畫容器
+        pageOverlay.style.display = 'none';
+        mainContent.style.display = 'block';
+
+        // 逐步淡入內容
+        fadeElements.forEach((element, index) => {
+            setTimeout(() => {
+                element.classList.add('show');
+            }, index * 300);
+        });
+    }, 3500);
+
+    // SKIP 按鈕功能
+    skipButton.addEventListener('click', () => {
+        pageOverlay.style.display = 'none'; // 立刻隱藏遮罩
         mainContent.style.display = 'block'; // 顯示主內容
-    }, 3500); // 動畫時長為 2 秒
+
+        // 立即顯示所有淡入元素
+        fadeElements.forEach(element => {
+            element.classList.add('show');
+        });
+    });
 });
 // -------------------------------
 document.addEventListener('DOMContentLoaded', () => {
@@ -122,5 +142,55 @@ document.addEventListener('DOMContentLoaded', () => {
               });
           }
       });
+  });
+});
+// ----------------------------------------------
+document.querySelector('.hamburger-menu').addEventListener('click', function () {
+  this.classList.toggle('open');
+  document.querySelector('.navbar-subtitles').classList.toggle('open');
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section"); // 目標區塊
+  const navLinks = document.querySelectorAll(".category-link"); // 導航按鈕
+
+  // 建立 Intersection Observer
+  const observerOptions = {
+    root: null,
+    threshold: 0.6, // 當區塊 60% 可見時觸發
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const targetId = entry.target.id;
+
+        // 移除所有按鈕的高亮
+        navLinks.forEach((link) => link.classList.remove("active"));
+
+        // 找到對應的按鈕並添加高亮
+        const activeLink = document.querySelector(
+          `.category-link[data-target="${targetId}"]`
+        );
+        if (activeLink) {
+          activeLink.classList.add("active");
+        }
+      }
+    });
+  }, observerOptions);
+
+  // 監測每個 section
+  sections.forEach((section) => observer.observe(section));
+
+  // 點擊滾動到指定位置
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const target = document.getElementById(link.dataset.target);
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 150, // 保持導航欄高度的間距
+          behavior: "smooth",
+        });
+      }
+    });
   });
 });
