@@ -793,31 +793,36 @@ img {
 }
 /* ------------------------------------------ */
 .ingredient-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 100px;
-    margin-top: 50px;
-    padding: 20px;
+    display: flex; /* 使用 Flexbox */
+    flex-wrap: wrap; /* 啟用換行 */
+    justify-content: space-between; /* 兩端對齊 */
+    gap: 20px; /* 圖片間距 */
+    margin: 150px; /* 水平居中 */
+    max-width: 1200px; /* 最大寬度 */
 }
 
 .ingredient {
+    flex: 0 0 calc(20% - 20px); /* 每個項目占 20% 寬度，減去間距 */
     text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    background: #fff;
-    cursor: grab;
+    box-sizing: border-box; /* 包括邊框和內距在寬度內 */
+    margin-bottom: 20px; /* 下方間距 */
 }
 
 .ingredient img {
-    width: 200px;
-    height: 200px;
+    width: 200px; /* 滿寬度 */
+    height: 200px; /* 保持比例 */
+    border-radius: 10px; /* 圓角 */
+    cursor: pointer;
+    transition: transform 0.3s ease; /* 懸停效果 */
 }
-
+/* 懸停時圖片放大效果 */
+.ingredient img:hover {
+    transform: scale(1.1);
+}
 .ingredient p {
+    font-family: "Playfair Display", serif; /* 優雅字體 */
     margin: 10px 0 0;
-    font-size: 14px;
+    font-size: 16px;
     color: #333;
 }
 .fridge-table {
@@ -871,4 +876,7 @@ img {
     text-align: center;
     font-style: italic;
     color: #aaa;
+}
+.main-content2 {
+    padding-top: 100px; /* 保留空間，根據導航欄高度調整 */
 }
