@@ -115,4 +115,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     renderFridge(); // 初始化冰箱內容
 });
-    
