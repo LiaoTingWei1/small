@@ -96,32 +96,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.addEventListener('DOMContentLoaded', () => {
     const skipButton = document.getElementById('skip-button');
-    const pageOverlay = document.getElementById('intro-animation');
+    const introAnimation = document.getElementById('intro-animation');
     const mainContent = document.getElementById('main-content');
-    const fadeElements = document.querySelectorAll('.fade-in');
 
-    // 自動執行動畫
+    // 自動結束動畫
     setTimeout(() => {
-        pageOverlay.style.display = 'none';
+        introAnimation.style.display = 'none';
         mainContent.style.display = 'block';
-
-        // 逐步淡入內容
-        fadeElements.forEach((element, index) => {
-            setTimeout(() => {
-                element.classList.add('show');
-            }, index * 300);
-        });
-    }, 3500);
+    }, 10000); // 總動畫時長延長至 X 秒
 
     // SKIP 按鈕功能
     skipButton.addEventListener('click', () => {
-        pageOverlay.style.display = 'none'; // 立刻隱藏遮罩
+        introAnimation.style.display = 'none'; // 立刻隱藏動畫
         mainContent.style.display = 'block'; // 顯示主內容
-
-        // 立即顯示所有淡入元素
-        fadeElements.forEach(element => {
-            element.classList.add('show');
-        });
     });
 });
 // -------------------------------
@@ -194,3 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+// JavaScript 文件中新增
+function navigateToStorage() {
+  window.location.href = 'storage.html'; // 跳轉至食材倉庫頁面
+}

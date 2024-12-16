@@ -34,17 +34,21 @@
                     <span class="category-link" data-target="meat-section">肉食天堂</span>
                     <span class="category-link" data-target="vegetables-section">綠色饗宴</span>
                     <span class="category-link" data-target="fish-section">鮮味之旅</span>
+                    <span class="category-link" onclick="navigateToStorage()" >食材倉庫</span>
+                    <button id="openFridge" class="category-link return-home fridge-button">我的冰箱</button>
                 </div>
             </div>
         </div>
     </div>
     
    <!-- 開頭動畫 -->
-<div id="intro-animation">
+   <div id="intro-animation">
     <div class="background-layer"></div> <!-- 背景層 -->
-    <div class="line first-line">歡迎來到 <span>食在好味</span></div>
-    <div class="line">在這裡，我們為您帶來健康、美味的食譜！</div>
-    <button id="skip-button" class="btn btn-dark">跳過</button>
+    <div class="line">歡迎來到 <span>食在好味</span></div>
+    <div class="line">這裡是美食愛好者的天堂！</div>
+    <div class="line">我們為您提供精選食譜，從肉類到蔬菜再到海鮮。</div>
+    <div class="line">輕鬆找到靈感，讓您的餐桌更加豐富多彩。</div>
+    <button id="skip-button" class="btn btn-dark">SKIP</button>
 </div>
     <!-- 網頁主要內容 -->
     <div id="main-content" style="display: none;">
@@ -405,7 +409,34 @@
         </div>
     </div>
 </div>
+<!-- 冰箱面板------------------------ -->
+<div class="fridge-panel" id="fridgePanel">
+    <div class="fridge-header">
+        <span class="fridge-title">我的冰箱</span>
+        <span class="fridge-close-btn" id="closeFridge"></span>
+    </div>
+    <!-- 冰箱表格 -->
+    <div class="fridge-content" id="fridgeContent" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <table class="fridge-table">
+            <thead>
+                <tr>
+                    <th>名稱</th>
+                    <th>數量</th>
+                    <th>清除</th>
+                </tr>
+            </thead>
+            <tbody id="fridgeBody">
+                <!-- 預設內容第一排 -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
     <script src="JS.js"></script>
+    <script src="storage.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
