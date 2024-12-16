@@ -16,21 +16,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeFridgeButton = document.getElementById("closeFridge");
     const fridgeContent = document.getElementById("fridgeContent");
     const fridgeBody = document.getElementById("fridgeBody");
+    const mainContent = document.querySelector('.main-content');
 
     // 使用 localStorage 保存食材
     let fridgeItems = JSON.parse(localStorage.getItem("fridgeItems")) || {};
 
     // 打開冰箱
-    openFridgeButton.addEventListener("click", () => {
-        fridgePanel.classList.add("open");
-        renderFridge();
+    openFridgeButton.addEventListener('click', () => {
+        fridgePanel.classList.add('open');
+        mainContent.classList.add('shifted'); // 主頁內容往左移動
     });
-
     // 關閉冰箱
-    closeFridgeButton.addEventListener("click", () => {
-        fridgePanel.classList.remove("open");
+    closeFridgeButton.addEventListener('click', () => {
+        fridgePanel.classList.remove('open');
+        mainContent.classList.remove('shifted'); // 主頁內容恢復原位
     });
-
     // 渲染冰箱內容
     function renderFridge() {
         fridgeBody.innerHTML = ""; // 清空內容
