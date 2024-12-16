@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function navigateToHome() {
-    window.location.href = 'new.html'; // 返回主頁
+    window.location.href = 'index.html'; // 返回主頁
 }
 document.addEventListener('DOMContentLoaded', () => {
     const body = document.querySelector('body');
